@@ -1,0 +1,310 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Events | FTC BHS Robotics Team 6198</title>
+  <meta name="description" content="Upcoming competition dates and outreach engagement dates for FTC BHS Robotics Team 6198." />
+  <meta property="og:title" content="Events | FTC BHS Robotics Team 6198" />
+  <meta property="og:description" content="Stay informed about competition dates and outreach engagement events from Barrington High School's FTC Robotics Team 6198." />
+  <meta property="og:type" content="website" />
+  <meta name="theme-color" content="#1f7a1f" />
+
+  <style>
+    :root {
+      --accent: #d32f2f;
+      --accent-dark: #9a0007;
+      --muted: #6b6b6b;
+      --bg: #fefefe;
+      --card: #ffffff;
+      --max-width: 1100px;
+      --radius: 14px;
+      font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      font-size: 16px;
+    }
+
+    body.dark {
+      --bg: #121212;
+      --card: #1c1c1c;
+      --accent: #ff4d4d;
+      --accent-dark: #d32f2f;
+      --muted: #b0b0b0;
+      color: #f0f0f0;
+      background: linear-gradient(180deg, #000000 0%, #1a0000 100%);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: var(--bg);
+      color: #1a1a1a;
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    .wrap {
+      max-width: var(--max-width);
+      margin: 32px auto;
+      padding: 20px;
+    }
+
+    header {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+
+    .logo {
+      width: 88px;
+      height: 88px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+      display: grid;
+      place-items: center;
+      color: white;
+      font-weight: 700;
+      font-size: 22px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+    }
+
+    h1 { font-size: 26px; margin-bottom: 4px; }
+    .sub { color: var(--muted); font-size: 14px; }
+
+    nav {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 10px;
+    }
+
+    a.btn {
+      text-decoration: none;
+      padding: 10px 14px;
+      border-radius: 12px;
+      background: transparent;
+      border: 1px solid rgba(0,0,0,0.08);
+      font-size: 14px;
+      color: var(--accent-dark);
+      transition: all 0.25s ease;
+    }
+
+    a.btn:hover {
+      background: var(--accent-dark);
+      color: white;
+    }
+
+    .dark-toggle {
+      margin-left: auto;
+      background: var(--accent-dark);
+      border: none;
+      color: white;
+      padding: 6px 12px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 14px;
+      transition: 0.2s;
+    }
+
+    .dark-toggle:hover { background: var(--accent); }
+
+    main {
+      display: grid;
+      grid-template-columns: 1fr 320px;
+      gap: 24px;
+      margin-top: 28px;
+    }
+
+    @media (max-width: 900px) {
+      main { grid-template-columns: 1fr; }
+      .right-col { order: 2; }
+    }
+
+    .card {
+      background: var(--card);
+      padding: 20px;
+      border-radius: var(--radius);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.05);
+      transition: background 0.3s ease, color 0.3s ease;
+    }
+
+    .section-title {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+    }
+
+    .muted { color: var(--muted); font-size: 13px; }
+    .muted-block { color: var(--muted); font-size: 13px; margin-top: 6px; }
+
+    ul { padding-left: 18px; }
+    li { margin-bottom: 6px; font-size: 14px; }
+
+    .timeline { position: relative; padding-left: 20px; }
+    .timeline::before {
+      content: "";
+      position: absolute;
+      left: 6px; top: 0; bottom: 0;
+      width: 2px; background: rgba(0,0,0,0.1);
+    }
+    .timeline-item { position: relative; margin-bottom: 18px; padding-left: 16px; }
+    .timeline-item::before {
+      content: "";
+      position: absolute;
+      left: -7px;
+      top: 4px;
+      width: 12px; height: 12px;
+      border-radius: 50%;
+      background: var(--accent);
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 10px;
+    }
+
+    .gallery img { width: 100%; height: 120px; object-fit: cover; border-radius: 10px; }
+
+    footer {
+      margin-top: 28px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 13px;
+      padding: 20px 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="logo" aria-hidden="true">6198</div>
+      <div>
+        <h1>Events & Outreach</h1>
+        <div class="sub">Competition calendar, scrimmages, and community appearances for Team 6198.</div>
+        <nav aria-label="Primary navigation">
+          <a class="btn" href="index.html">Home</a>
+          <a class="btn" href="status.html">Status</a>
+          <a class="btn" href="sponsors.html">Sponsors</a>
+          <a class="btn" href="events.html">Events</a>
+          <a class="btn" href="team.html">Team</a>
+          <a class="btn" href="mentors.html">Mentors</a>
+        </nav>
+      </div>
+      <button id="darkModeToggle" class="dark-toggle">🌙</button>
+    </header>
+
+    <main>
+      <section>
+        <article class="card">
+          <div class="section-title">
+            <h2 style="margin:0;font-size:18px">Upcoming Schedule</h2>
+            <span class="muted">Events Included</span>
+          </div>
+          <ul>
+            <li><strong>Team Meeting Sessions —</strong> Every day after school until 4:30 PM unless otherwise noted.</li>
+            <li><strong>Sponsor Meetings —</strong> Schedule an appointment via email or social media.</li>
+            <li><strong>League Meet 1 —</strong> 7:00 AM ~ 2:00 PM – Saturday, November 15th – BHS</li>
+            <li><strong>League Meet 2 —</strong> 7:00 AM ~ 2:00 PM – Saturday, December 13th – Cary-Grove HS</li>
+            <li><strong>League Meet 3 —</strong> 7:00 AM ~ 2:00 PM – Saturday, January 17th – Crystal Lake South HS</li>
+            <li><strong>League Championship —</strong> 6:00 AM ~ 8:00 PM – Saturday, February 21st – Harvest Christian Academy</li>
+          </ul>
+        </article>
+
+        <article class="card" style="margin-top:16px">
+          <div class="section-title">
+            <h2 style="margin:0;font-size:18px">Season Timeline</h2>
+            <span class="muted">Key Milestones</span>
+          </div>
+          <div class="timeline">
+            <div class="timeline-item">
+              <strong>September</strong>
+              <p class="muted-block">Focus on fundraising and obtaining sponsorships to support early season efforts.</p>
+            </div>
+            <div class="timeline-item">
+              <strong>October</strong>
+              <p class="muted-block">Begin programming and build a functional intake system. Happy Halloween! 🎃</p>
+            </div>
+            <div class="timeline-item">
+              <strong>November</strong>
+              <p class="muted-block">Finalize the outtake system before League Meet 1 and continue developing the team’s digital presence.</p>
+            </div>
+            <div class="timeline-item">
+              <strong>December</strong>
+              <p class="muted-block">Compete in League Meet 2. Merry Christmas! 🎄</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="card" style="margin-top:16px">
+          <div class="section-title">
+            <h2 style="margin:0;font-size:18px">Photo Gallery</h2>
+            <span class="muted">Highlights</span>
+          </div>
+          <div class="gallery" role="list">
+            <p class="muted-block">No images yet</p>
+          </div>
+          <p class="muted-block">Submit event photos to 
+            <a href="mailto:Email">Email</a> for inclusion.
+          </p>
+        </article>
+      </section>
+
+      <aside class="right-col">
+        <div class="card">
+          <div class="section-title">
+            <h3 style="margin:0;font-size:16px">Volunteer</h3>
+            <span class="muted">Sign Up</span>
+          </div>
+        </div>
+        <div class="card" style="margin-top:16px">
+          <div class="section-title">
+            <h3 style="margin:0;font-size:16px">Event Prep Checklist</h3>
+          </div>
+          <ul>
+            <li>Team & Yourself</li>
+            <li>Robot</li>
+            <li>Gracious Professionalism Mindset</li>
+            <li>Safety</li>
+          </ul>
+        </div>
+        <div class="card" style="margin-top:16px">
+          <div class="section-title">
+            <h3 style="margin:0;font-size:16px">Streaming & Results</h3>
+          </div>
+          <ul>
+            <li><a href="https://ftc-events.firstinspires.org/" target="_blank" rel="noopener">FTC Event Results</a></li>
+            <li><a href="https://www.twitch.tv/firstinspires" target="_blank" rel="noopener">FIRST Inspires Twitch</a></li>
+          </ul>
+        </div>
+      </aside>
+    </main>
+
+    <footer>
+      <div>© <span id="year"></span> FIRST Tech Challenge Team 6198 - Barrington High School Robotics | BSD220</div>
+      <div class="muted">Maintained by Anant Parikh.</div>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    const toggleBtn = document.getElementById('darkModeToggle');
+    const applyTheme = (theme) => {
+      document.documentElement.setAttribute('data-theme', theme);
+      document.body.classList.toggle('dark', theme==='dark');
+      toggleBtn.textContent = theme==='dark' ? '☀️' : '🌙';
+    };
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    applyTheme(savedTheme);
+    toggleBtn.addEventListener('click', () => {
+      const next = document.body.classList.contains('dark') ? 'light' : 'dark';
+      applyTheme(next);
+      localStorage.setItem('theme', next);
+    });
+  </script>
+</body>
+</html>
