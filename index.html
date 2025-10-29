@@ -160,13 +160,145 @@
     </header>
 
     <main>
+      <!-- LEFT / main content -->
       <section>
-        <!-- Existing content remains unchanged -->
-        <!-- ... All articles, tables, galleries, lists ... -->
+        <article id="about" class="card" aria-labelledby="about-heading">
+          <div class="section-title">
+            <h2 id="about-heading" style="margin:0;font-size:18px">About Team 6198</h2>
+            <span class="tag">FTC</span>
+          </div>
+          <p class="muted-block">
+            FTC BHS Robotics Team 6198 is the FIRST robotics team from BHS in barrington school district 220. We design, build, and program competitive robots while learning engineering, gracious professionalism, teamwork, and leadership. Our home workspace is <strong>BHS</strong> — welcome to drop by during club hours.
+          </p>
+        </article>
+
+        <article id="roster" class="card" aria-labelledby="roster-heading" style="margin-top:14px">
+          <div class="section-title">
+            <h2 id="roster-heading" style="margin:0;font-size:18px">Roster (2025 Season)</h2>
+            <span class="muted small">Subject to updates</span>
+          </div>
+
+          <!-- Editable roster table -->
+          <table role="table" aria-label="Team roster">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Role</th>
+                <th>Grade</th>
+              </tr>
+            </thead>
+            <tbody id="roster-body">
+              <tr><td>Muhamed Irtaza Haider</td><td>Team Leader, Lead Programmer, & Lead Builder</td><td>11</td></tr>
+              <tr><td>Varun Nair</td><td>Vice Team Leader & Lead Builder</td><td>11</td></tr>
+              <tr><td>Aiden Hawthorn</td><td>Lead Documentation & Lead Outreach</td><td>11</td></tr>
+              <tr><td>Anant Parikh</td><td>Lead Finances & Lead Sponsorship Manager</td><td>9</td></tr>
+              <tr><td>Nataya Horn</td><td>Lead CAD</td><td>10</td></tr>
+              <tr><td>Devraj Patel</td><td>Builder</td><td>9</td></tr>
+              <tr><td>Anaiza Zaki</td><td>Lead Graphic Designer & Lead Brand Designer</td><td>10</td></tr>
+            </tbody>
+          </table>
+
+          <p class="muted-block small">If the team roster is inaccurate please contact us on our Instagram.</p>
+        </article>
+
+        <article id="schedule" class="card" aria-labelledby="schedule-heading" style="margin-top:14px">
+          <div class="section-title">
+            <h2 id="schedule-heading" style="margin:0;font-size:18px">Upcoming Events</h2>
+            <span class="muted small">Check With Our Lead Outreach To Confirm Dates.</span>
+          </div>
+          <ul style="margin:0;padding-left:18px">
+            <li><strong>Team Meeting Sessions —</strong> Everyday Afterschool Until 4:30 PM Unless Otherwise Noted</li>
+            <li><strong>Sponsor Meetings —</strong> Schedule An Appointment Via Emailing Our Lead Sponsorship Manager or Contacting Our Instagram</li>
+            <li><strong>League Meet 1 —</strong> 7:00 AM ~ 2 PM - Saturday, Novbember 15th - BHS</li>
+            <li><strong>League Meet 2 —</strong> 7:00 AM ~ 2 PM - Saturday, December 13th - Cary Grove HS</li>
+            <li><strong>League Meet 3 —</strong> 7:00 AM ~ 2 PM - Saturday, January 17th - Crystal Lake South HS</li>
+            <li><strong>League Championship —</strong> 6:00 AM ~ 8 PM - Saturday, Febuary 21st - Harvest Christian Academy</li>
+          </ul>
+        </article>
+
+        <article id="gallery" class="card" aria-labelledby="gallery-heading" style="margin-top:14px">
+          <div class="section-title">
+            <h2 id="gallery-heading" style="margin:0;font-size:18px">Robot Gallery</h2>
+            <a href="events.html#gallery" class="small">View more photos</a>
+          </div>
+          <div class="gallery" role="list">
+            <!-- Update Images -->
+            <img alt="CAD Render" src="https://via.placeholder.com/320x200?text=CAD+Render" />
+            <img alt="Robot" src="https://via.placeholder.com/320x200?text=Robot" />
+            <img alt="Mathematics" src="https://via.placeholder.com/320x200?text=Mathematics" />
+            <img alt="Team Meeting" src="https://via.placeholder.com/320x200?text=Team+Meeting" />
+          </div>
+          <p class="muted-block small">To add real photos, replace the <code>src</code> URLs with images stored in your repo or an image host. More galleries live on the <a href="events.html#gallery">events page</a>.</p>
+        </article>
+
+         <article id="resources" class="card" aria-labelledby="resources-heading" style="margin-top:14px">
+          <div class="section-title">
+            <h2 id="resources-heading" style="margin:0;font-size:18px">Resources & Links</h2>
+          </div>
+          <ul>
+            <li><a href="https://ftc-resources.firstinspires.org/ftc/game" target="_blank" rel="noopener">FTC Game Resources</a></li>
+          </ul>
+          <p class="muted-block small">Pro tip: keep manuals & docs in a repo folder like <code>/docs/</code> so they publish with GitHub Pages.</p>
+        </article>
       </section>
 
+      <!-- RIGHT / sidebar -->
       <aside class="right-col" style="width:100%">
-        <!-- Existing sidebar content unchanged -->
+        <div class="card">
+          <div class="section-title">
+            <h3 style="margin:0;font-size:16px">Mentors & Contacts</h3>
+            <span class="muted small">BSD220</span>
+          </div>
+          <div class="muted-block">
+            <!-- Update the Names & Emails -->
+            <strong>Mentor</strong> Name (Email)<br>
+            <strong>Mentor</strong> Name (Email)<br>
+            <strong>Student Mentor</strong> Name (Email)
+            <strong>Student Mentor</strong> Name (Email)
+          </div>
+
+          <hr style="margin:12px 0;border:none;border-top:1px solid #eef2f6" />
+
+          <div>
+            <div class="muted small">Quick actions</div>
+            <div style="display:flex;gap:8px;margin-top:8px;flex-wrap:wrap">
+              <!--  Update Emails & Names -->
+              <a class="cta" href="mailto:Email">Email Mentor - Name</a>
+              <a class="cta" href="mailto:Email">Email Mentor - Name</a>
+              <a class="cta" href="mailto:Email">Email Student Mentor - Name</a>
+              <a class="cta" href="mailto:Email">Email Student Mentor - Name</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="card" style="margin-top:14px">
+          <div class="section-title">
+            <h3 style="margin:0;font-size:16px">Sponsors</h3>
+            <span class="muted small">Companies That Gave Us Grants</span>
+          </div>
+          <div class="sponsor-list">
+            <div class="sponsor"><strong>Rewind Analog (FearlessProductions.TV)</strong> — $200.00 | Level 2 Sponsorship</div>
+            <div class="sponsor"><strong>Leopardo Construction</strong> — $500.00 | Level 2 Sponsorship</div>
+          </div>
+          <p class="muted-block small">Want to sponsor? Contact the Lead Sponsorship Manager.</p>
+        </div>
+
+        <div class="card" style="margin-top:14px">
+          <div class="section-title">
+            <h3 style="margin:0;font-size:16px">Location</h3>
+            <span class="muted small">BHS</span>
+          </div>
+          <p class="muted-block small" style="margin:0">Club meets everyday afterschool, however your team may meet on alternating dates.</p>
+        </div>
+
+        <div class="card" style="margin-top:14px">
+          <h3 style="margin:0;font-size:16px">Social</h3>
+          <p class="muted-block small" style="margin:8px 0 0">
+            <!-- Update Socials -->
+            Instagram: <a href="#" target="_blank" rel="noopener">@ftc6198_bhs</a>
+            Email: <a href="mailTo:Email" target="_blank" rel="noopener">@ftc6198_bhs</a>
+          </p>
+        </div>
       </aside>
     </main>
 
