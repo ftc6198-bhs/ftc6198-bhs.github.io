@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Sponsors • FTC BHS Robotics Team 6198</title>
+  <meta name="description" content="Meet the sponsors backing FTC BHS Robotics Team 6198 and learn how to partner with the team or even the BHS Robotics Program." />
+  <meta property="og:title" content="Sponsors • FTC Team 6198" />
+  <meta property="og:description" content="Support opportunities, recognition tiers, and current partners for FTC BHS Robotics Team 6198." />
+  <meta property="og:type" content="website" />
+  <meta name="theme-color" content="#1f7a1f" />
+
+  <link rel="stylesheet" href="mentors.css"> <!-- reuse mentors.html styling -->
+</head>
+
+<body>
+  <div class="wrap">
+    <!-- HEADER -->
+    <header>
+      <div class="logo" aria-hidden="true">6198</div>
+      <div>
+        <h1>Sponsors & Partners</h1>
+        <div class="sub">Thank you to the organizations that power FTC Team 6198 at Barrington High School.</div>
+
+        <nav aria-label="Primary navigation">
+          <a class="btn" href="index.html">Home</a>
+          <a class="btn" href="status.html">Status</a>
+          <a class="btn" href="sponsors.html">Sponsors</a>
+          <a class="btn" href="events.html">Events</a>
+          <a class="btn" href="team.html">Team</a>
+          <a class="btn" href="mentors.html">Mentors</a>
+        </nav>
+      </div>
+
+      <button id="darkModeToggle" class="dark-toggle">🌙</button>
+    </header>
+
+    <main>
+      <!-- LEFT COLUMN: Sponsor Content -->
+      <section>
+        <article class="card">
+          <div class="section-title">
+            <h2>Significant Sponsors</h2>
+            <span class="muted">Decode Season</span>
+          </div>
+          <div class="grid">
+            <div>
+              <div class="tier-name">Rewind Analog (FearlessProductions.TV)</div>
+              <p class="muted-block">Level 2 Sponsor | $200.00</p>
+              <a class="btn" href="https://rewindanalog.com" target="_blank" rel="noopener">Visit Sponsor</a>
+              <a class="btn" href="https://www.fearlessproductions.tv" target="_blank" rel="noopener">Parent Company</a>
+            </div>
+            <div>
+              <div class="tier-name">Leopardo Construction</div>
+              <p class="muted-block">Level 2 Sponsor | $500.00</p>
+              <a class="btn" href="https://leopardo.com" target="_blank" rel="noopener">Visit Sponsor</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="section-title">
+            <h2>Sponsor Tiers</h2>
+            <span class="muted">Ways to Give</span>
+          </div>
+          <div class="grid">
+            <div>
+              <div class="tier-name">Level 1 | $100.00+</div>
+              <ul>
+                <li>Logo on flyers & pamphlets.</li>
+                <li>Social Media Feature!</li>
+              </ul>
+            </div>
+            <div>
+              <div class="tier-name">Level 2 | $250.00+</div>
+              <ul>
+                <li>Level 1 Perks</li>
+                <li>Logo displayed on our robot.</li>
+                <li>Appointment with our team.</li>
+              </ul>
+            </div>
+            <div>
+              <div class="tier-name">Level 3 | $500.00+</div>
+              <ul>
+                <li>Level 2 Perks</li>
+                <li>Logo on banners & competition boards.</li>
+                <li>Progress Update Emails</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="section-title">
+            <h2>In-Kind Contributions</h2>
+            <span class="muted">Donations & Fundraised</span>
+          </div>
+          <ul>
+            <li>[Parts] From [Irtaza's Father]</li>
+            <li>$300.00 from concessions @ BHS Stadium (Filly Football & Varsity Soccer)</li>
+          </ul>
+        </article>
+      </section>
+
+      <!-- RIGHT COLUMN: Info Panels -->
+      <aside class="right-col">
+        <div class="card">
+          <div class="section-title">
+            <h3>Become a Sponsor</h3>
+            <span class="muted">Contact</span>
+          </div>
+          <p class="muted-block">
+            Email <a href="mailto:aparikh1@bsd220.org">Anant Parikh</a> to negotiate levels & appointments (Level 2+).
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="section-title">
+            <h3>Tax Information</h3>
+          </div>
+          <p class="muted-block">The BHS Robotics Program is part of a 501(c)(3) organization.</p>
+        </div>
+      </aside>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="small">
+        © <span id="year"></span> FIRST Tech Challenge Team 6198 - Barrington High School Robotics | Barrington School District 220
+      </div>
+      <div class="small muted">This site is maintained by Anant Parikh.</div>
+    </footer>
+  </div>
+
+  <script>
+    // Auto-update the footer year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // DARK MODE TOGGLE FUNCTIONALITY
+    const toggleBtn = document.getElementById('darkModeToggle');
+    const applyTheme = (theme) => {
+      const isDark = theme === 'dark';
+      document.documentElement.setAttribute('data-theme', isDark ? 'dark' : 'light');
+      document.body.classList.toggle('dark', isDark);
+      toggleBtn.textContent = isDark ? '☀️' : '🌙';
+    };
+    const savedTheme = localStorage.getItem('theme') === 'dark' ? 'dark' : 'light';
+    applyTheme(savedTheme);
+    toggleBtn.addEventListener('click', () => {
+      const nextTheme = document.body.classList.contains('dark') ? 'light' : 'dark';
+      applyTheme(nextTheme);
+      localStorage.setItem('theme', nextTheme);
+    });
+  </script>
+</body>
+</html>
