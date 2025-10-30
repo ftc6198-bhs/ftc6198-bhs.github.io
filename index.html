@@ -50,24 +50,25 @@
 
     header {
       display: flex;
-      flex-wrap: wrap;
       align-items: center;
       gap: 16px;
       margin-bottom: 24px;
     }
 
+
     .logo {
-      width: 88px;
-      height: 88px;
-      border-radius: var(--radius);
-      background: linear-gradient(135deg,var(--accent),var(--accent-dark));
+      width: 84px;
+      height: 84px;
+      border-radius: 10px;
+      background: linear-gradient(135deg, var(--accent), var(--accent-dark));
       display: grid;
       place-items: center;
       color: white;
       font-weight: 700;
-      font-size: 24px;
-      box-shadow: var(--shadow);
+      font-size: 20px;
+      box-shadow: 0 6px 20px rgba(31, 106, 63, 0.12);
     }
+
 
     h1 { font-size: 26px; margin-bottom: 4px; }
     .sub { color: var(--muted); font-size: 14px; }
@@ -147,7 +148,7 @@
       <div>
         <h1>FTC Team 6198 — BHS</h1>
         <div class="sub">Competing whilst embracing Gracious Professionalism & inspiring students around the globe.</div>
-        <nav aria-label="Primary navigation">
+        <nav>
           <a class="btn" href="index.html">Home</a>
           <a class="btn" href="status.html">Status</a>
           <a class="btn" href="sponsors.html">Sponsors</a>
@@ -158,6 +159,7 @@
       </div>
       <button id="darkModeToggle" class="dark-toggle">🌙</button>
     </header>
+
 
     <main>
       <!-- LEFT / main content -->
