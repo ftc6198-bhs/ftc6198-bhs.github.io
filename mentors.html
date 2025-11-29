@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
+  <!-- Page metadata and SEO for Mentors page -->
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Mentors • FTC BHS Robotics Team 6198</title>
@@ -8,222 +9,159 @@
   <meta property="og:title" content="Mentors | FTC BHS Robotics Team 6198" />
   <meta property="og:description" content="Mentors, Short Biography, & Expertise." />
   <meta property="og:type" content="website" />
-  <meta name="theme-color" content="#1f7a1f" />
+  <meta name="theme-color" content="#ff4d88" />
 
   <style>
-    /* GLOBAL THEME VARIABLES */
+    /* Unified site-wide CSS with requested color scheme: Light = White/Pink/Red; Dark = Black/Maroon/Orange */
     :root {
-      --accent: #d32f2f;
-      --accent-dark: #9a0007;
+      --accent: #ff4d88; /* pink */
+      --accent-dark: #d32f2f; /* red */
       --muted: #6b6b6b;
       --bg: #ffffff;
       --card: #ffffff;
       --max-width: 1100px;
       --radius: 12px;
-      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      --shadow: 0 6px 20px rgba(0,0,0,0.08);
+      --text: #0b1220;
+      --pink-bg: #fff5f8;
+      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
     }
 
-    /* DARK MODE VARIABLES */
     body.dark {
-      --bg: #090909;
-      --card: #1a0f0f;
-      --accent: #ff4d4d;
-      --accent-dark: #d32f2f;
+      --bg: #000000; /* black */
+      --card: #3b0b0b; /* maroon */
+      --accent: #ff8a00; /* orange */
+      --accent-dark: #d35400; /* darker orange */
       --muted: #b0b0b0;
+      --sponsor-bg: rgba(255,255,255,0.03);
       color: #f5f5f5;
       background: linear-gradient(180deg, #000000 0%, #1a0000 100%);
     }
 
-    /* RESET */
+    /* Reset and base */
     * { box-sizing: border-box; }
-
     body {
       margin: 0;
       background: linear-gradient(180deg, #ffffff 0%, #fff4f4 100%);
-      color: #1a1a1a;
+      color: var(--text);
       line-height: 1.45;
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
       transition: background 0.3s, color 0.3s;
     }
 
-    .wrap { max-width: var(--max-width); margin: 28px auto; padding: 20px; }
+    .wrap { max-width: var(--max-width); margin: 32px auto; padding: 24px; }
 
-    /* HEADER */
-    header {
-      display: flex;
-      gap: 16px;
-      align-items: center;
-      margin-bottom: 18px;
-    }
+    header { display:flex; gap:16px; align-items:center; margin-bottom:18px; }
 
     .logo {
-      width: 84px;
-      height: 84px;
-      border-radius: 10px;
+      width:84px; height:84px; border-radius:10px;
       background: linear-gradient(135deg, var(--accent), var(--accent-dark));
-      display: grid;
-      place-items: center;
-      color: white;
-      font-weight: 700;
-      font-size: 20px;
-      box-shadow: 0 6px 20px rgba(31, 106, 63, 0.12);
+      display:grid; place-items:center; color:white; font-weight:700; font-size:20px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+      position:relative;
+      overflow:hidden;
+    }
+    .logo img {
+      width:100%;
+      height:100%;
+      object-fit:contain;
+      position:absolute;
+      top:0;
+      left:0;
+    }
+    .logo span {
+      position:relative;
+      z-index:1;
+      font-size:0;
     }
 
-    h1 { margin: 0; font-size: 24px; }
-    .sub { color: var(--muted); font-size: 14px; }
+    h1 { margin:0; font-size:24px; }
+    .sub { color: var(--muted); font-size:14px; }
 
-    nav {
-      margin-top: 12px;
-      display: flex;
-      gap: 8px;
-      flex-wrap: wrap;
-    }
+    nav { margin-top:12px; display:flex; gap:8px; flex-wrap:wrap; }
 
-    /* NAV BUTTONS */
     a.btn {
-      text-decoration: none;
-      padding: 8px 12px;
-      border-radius: 10px;
-      background: transparent;
-      border: 1px solid rgba(15, 23, 42, 0.06);
-      font-size: 13px;
-      color: var(--accent-dark);
+      text-decoration:none; padding:8px 12px; border-radius:10px; background:transparent;
+      border:1px solid rgba(15,23,42,0.06); font-size:13px; color:var(--accent-dark);
       transition: background 0.2s, color 0.2s;
     }
-    a.btn:hover {
-      background: var(--accent-dark);
-      color: white;
-    }
+    a.btn:hover { background:var(--accent-dark); color:white; }
 
-    /* DARK MODE BUTTON */
-    .dark-toggle {
-      margin-left: auto;
-      background: var(--accent-dark);
-      border: none;
-      color: white;
-      padding: 6px 10px;
-      border-radius: 6px;
-      cursor: pointer;
-      font-size: 12px;
-      transition: 0.2s;
-    }
-    .dark-toggle:hover {
-      background: var(--accent);
-    }
+    .dark-toggle { margin-left:auto; background:var(--accent-dark); border:none; color:white; padding:6px 10px; border-radius:6px; cursor:pointer; font-size:12px; transition:0.2s; }
+    .dark-toggle:hover { background:var(--accent); }
 
-    /* MAIN GRID */
-    main {
-      display: grid;
-      grid-template-columns: 1fr 320px;
-      gap: 20px;
-      margin-top: 22px;
-    }
-    @media (max-width: 900px) {
-      main { grid-template-columns: 1fr; }
-      .right-col { order: 2; }
-    }
+    main { display:grid; grid-template-columns: 1fr 320px; gap:20px; margin-top:22px; }
+    @media (max-width:900px) { main{ grid-template-columns:1fr; } .right-col{ order:2; } }
 
-    /* CARDS */
     .card {
-      background: var(--card);
-      padding: 16px;
-      border-radius: var(--radius);
-      box-shadow: 0 6px 20px rgba(12, 15, 20, 0.04);
-      transition: background 0.3s, color 0.3s;
+      background:var(--card); padding:16px; border-radius:var(--radius);
+      box-shadow:var(--shadow); transition: background 0.3s, color 0.3s;
     }
 
-    .section-title {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 10px;
-    }
-    .muted { color: var(--muted); font-size: 13px; }
-    .muted-block { color: var(--muted); font-size: 13px; margin-top: 8px; }
+    /* Normalize spacing between articles and ensure font is applied */
+    html, body { font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; }
+    section > article.card { margin-top: 14px; }
+    section > article.card:first-child { margin-top: 0; }
 
-    /* MENTOR GRID */
-    .mentor-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 18px;
-      justify-content: center;
-      text-align: center;
-    }
+    .section-title { display:flex; justify-content:space-between; align-items:center; margin-bottom:10px; }
+    .muted { color:var(--muted); font-size:13px; }
+    .muted-block { color:var(--muted); font-size:13px; margin-top:8px; }
 
-    /* FLIP CARDS */
-    .team-mentor { perspective: 1000px; cursor: pointer; }
-    .flip-inner {
-      position: relative;
-      width: 100%;
-      height: 300px;
-      transition: transform 0.6s;
-      transform-style: preserve-3d;
-    }
-    .team-mentor:hover .flip-inner,
-    .team-mentor.flipped .flip-inner {
-      transform: rotateY(180deg);
-    }
-    .flip-front, .flip-back {
-      position: absolute;
-      width: 100%; height: 100%;
-      backface-visibility: hidden;
-      border-radius: var(--radius);
-      background: var(--card);
-      box-shadow: 0 3px 12px rgba(15, 23, 42, 0.05);
-      padding: 14px;
-      display: flex; flex-direction: column;
-      align-items: center; justify-content: center;
-      transition: background 0.3s, color 0.3s;
-    }
+    .tag, .pill { display:inline-block; padding:4px 10px; border-radius:999px; background:var(--pink-bg); font-size:12px; font-weight:600; color:var(--accent-dark); }
 
-    .flip-back {
-      transform: rotateY(180deg);
-      background: linear-gradient(135deg, var(--accent), var(--accent-dark));
-      color: white;
-      text-align: center;
-    }
+    table { width:100%; border-collapse:collapse; margin-top:8px; }
+    th, td { padding:8px 6px; text-align:left; font-size:14px; border-bottom:1px solid #eef2f6; }
+    th { font-weight:700; color:var(--text); }
 
-    .team-mentor img {
-      width: 100%;
-      max-width: 140px;
-      border-radius: 8px;
-      margin: 10px auto;
-    }
-    .team-mentor h3 {
-      margin: 6px 0 4px;
-      font-size: 16px;
-      color: var(--text);
-    }
-    .flip-back h3 { color: white; margin-bottom: 6px; }
-    .team-mentor p {
-      margin: 0;
-      font-size: 13px;
-      color: var(--muted);
-    }
-    .flip-back p { color: #f1f5f1; font-size: 13px; line-height: 1.4; }
+    .gallery { display:grid; grid-template-columns: repeat(3,1fr); gap:10px; margin-top:8px; }
+    .gallery img { width:100%; height:90px; object-fit:cover; border-radius:10px; }
+    @media (max-width:600px) { .gallery { grid-template-columns:repeat(2,1fr); } .gallery img { height:72px; } }
 
-    /* SIDEBAR */
-    .right-col { position: sticky; top: 20px; height: fit-content; }
+    .center { display:flex; align-items:center; gap:10px; }
+    .cta { background:var(--accent); color:#fff; padding:10px 14px; border-radius:12px; font-weight:600; display:inline-block; font-size:13px; }
 
-    /* FOOTER */
-    footer {
-      margin-top: 22px;
-      text-align: center;
-      color: var(--muted);
-      font-size: 13px;
-      padding: 18px 0;
-    }
+    .sponsor-list { display:flex; flex-direction:column; gap:10px; }
+    .sponsor { padding:10px; border-radius:10px; background:var(--sponsor-bg, #fff5f8); border:1px solid rgba(0,0,0,0.04); }
+
+    /* FLIP CARDS: 3D flip animation for mentor cards */
+    /* Grid layout with responsive card sizing */
+    .mentor-grid, .team-grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(220px,1fr)); gap:18px; justify-content:center; text-align:center; }
+    /* Individual card with 3D perspective and cursor pointer */
+    .team-mentor, .team-member { perspective:1000px; cursor:pointer; }
+    /* Inner container that performs the 3D rotation */
+    .flip-inner { position:relative; width:100%; height:300px; transition: transform 0.6s; transform-style:preserve-3d; }
+    /* Flip animation: hover or flipped class triggers 180deg rotation */
+    .team-mentor:hover .flip-inner, .team-mentor.flipped .flip-inner, .team-member:hover .flip-inner, .team-member.flipped .flip-inner { transform:rotateY(180deg); }
+    /* Front and back faces: both positioned absolute, backface-visibility hidden for flip effect */
+    .flip-front, .flip-back { position:absolute; width:100%; height:100%; backface-visibility:hidden; border-radius:var(--radius); background:var(--card); box-shadow:0 3px 12px rgba(15,23,42,0.05); padding:14px; display:flex; flex-direction:column; align-items:center; justify-content:center; transition: background 0.3s, color 0.3s; }
+    /* Back face: rotated 180deg by default, gradient background, white text */
+    .flip-back { transform:rotateY(180deg); background: linear-gradient(135deg, var(--accent), var(--accent-dark)); color:white; text-align:center; }
+    /* Back face text: lighter color for better contrast on gradient */
+    .flip-back p { color:#fff5f1; font-size:13px; line-height:1.4; }
+
+    .right-col { position:sticky; top:20px; height:fit-content; }
+    .right-col > .card { margin-top: 14px; }
+    .right-col > .card:first-child { margin-top: 0; }
+
+    footer { margin-top:22px; text-align:center; color:var(--muted); font-size:13px; padding:18px 0; }
   </style>
 </head>
 
 <body>
   <div class="wrap">
+    <!-- HEADER: Site branding and navigation -->
     <header>
-      <div class="logo">6198</div>
+      <!-- LOGO: Team 6198 branding -->
+      <div class="logo" aria-label="Team 6198 Logo">
+        <img src="Logo.PNG" alt="6198" />
+        <span>6198</span>
+      </div>
+      <!-- HEADER CONTENT: Title and navigation menu -->
       <div>
         <h1>Meet Team 6198's Mentors</h1>
         <div class="sub">Introducing the mentors of Team 6198.</div>
+        <!-- PRIMARY NAVIGATION: Links to main pages -->
         <nav>
           <a class="btn" href="index.html">Home</a>
           <a class="btn" href="status.html">Status</a>
@@ -233,31 +171,47 @@
           <a class="btn" href="mentors.html">Mentors</a>
         </nav>
       </div>
+      <!-- DARK MODE TOGGLE: Theme switcher -->
       <button class="dark-toggle" id="darkToggle" title="Toggle dark mode">🌙</button>
     </header>
 
     <main>
       <section>
+        <!-- MENTORS SECTION: Flip card grid with current season mentors (varies by season) -->
         <article class="card" style="margin-top:14px">
           <div class="section-title">
             <h2 style="margin:0;font-size:18px">Decode Season Team Mentors</h2>
           </div>
 
+          <!-- FLIP CARD GRID: Click to reveal expertise on back -->
           <div class="mentor-grid">
+            <!-- MENTOR 1: Example structure for mentor flip card -->
             <div class="team-mentor"><div class="flip-inner"><div class="flip-front"><h3>AJ Priola</h3><img src="images/aj_priola.jpg" alt="AJ Priola"><p><strong>Expertise:</strong> Programming & FIRST</p></div><div class="flip-back"><h3>AJ Priola</h3><p>Programming Assistance</p></div></div></div>
+            <!-- MENTOR 2 -->
             <div class="team-mentor"><div class="flip-inner"><div class="flip-front"><h3>Mr. Priola</h3><img src="images/mr_priola.jpg" alt="Mr. Priola"><p><strong>Expertise:</strong> Engineering, Management, & FIRST</p></div><div class="flip-back"><h3>Mr. Priola</h3><p>Build Advice & Timing</p></div></div></div>
+            <!-- MENTOR 3 -->
             <div class="team-mentor"><div class="flip-inner"><div class="flip-front"><h3>Justin</h3><img src="images/justin.jpg" alt="Justin"><p><strong>Expertise:</strong> Building & FIRST</p></div><div class="flip-back"><h3>Justin</h3><p>Advice on our build.</p></div></div></div>
+            <!-- MENTOR 4 -->
             <div class="team-mentor"><div class="flip-inner"><div class="flip-front"><h3>Aiden</h3><img src="images/aiden_mentor.jpg" alt="Aiden"><p><strong>Expertise:</strong> Robotics & FIRST</p></div><div class="flip-back"><h3>Aiden</h3><p>Motivates our team.</p></div></div></div>
+
+            <!-- TEMPLATE: MENTOR - Add new mentors for next season here (varies by season) -->
+            <!-- INSTRUCTIONS: Copy this block and update name, image, expertise, and description -->
+            <!--
+            <div class="team-mentor"><div class="flip-inner"><div class="flip-front"><h3>[MENTOR NAME]</h3><img src="images/[image_filename].jpg" alt="[MENTOR NAME]"><p><strong>Expertise:</strong> [AREAS OF EXPERTISE]</p></div><div class="flip-back"><h3>[MENTOR NAME]</h3><p>[Brief description of contributions/focus areas]</p></div></div></div>
+            -->
           </div>
         </article>
       </section>
 
+      <!-- RIGHT COLUMN: Sidebar with mentor information -->
       <aside class="right-col">
+        <!-- MENTOR INQUIRY: Information for potential mentors -->
         <div class="card" style="margin-top:14px">
           <div class="section-title"><h3 style="margin:0;font-size:16px">Mentor our Team</h3></div>
           <p class="muted-block">Interested mentoring the BHS students in our team, <a href="mailto:bhs.ftc6198+mentors@proton.me">email our team</a>.</p>
         </div>
 
+        <!-- RESOURCES: Links to other important pages -->
         <div class="card" style="margin-top:14px">
           <div class="section-title"><h3 style="margin:0;font-size:16px">Resources</h3></div>
           <ul>
@@ -270,6 +224,7 @@
       </aside>
     </main>
 
+    <!-- FOOTER: Copyright and maintainer information -->
     <footer>
       <div>© <span id="year"></span> FIRST Tech Challenge Team 6198 - Barrington High School Robotics | BSD220</div>
       <div class="muted">This site is maintained by Anant Parikh.</div>
@@ -277,27 +232,33 @@
   </div>
 
   <script>
+    /* ===== JAVASCRIPT: Interactivity and Theme Management ===== */
+
+    /* Auto-update footer year to current year */
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    // Correct flip logic (fixed selector typo)
+    /* FLIP CARD FUNCTIONALITY: Handle mentor card flips */
+    /* Clicking a mentor card toggles flip state, only one card flipped at a time */
     document.addEventListener('click', (event) => {
       const clickedCard = event.target.closest('.team-mentor');
+      /* Remove flipped class from all other cards */
       document.querySelectorAll('.team-mentor.flipped').forEach(card => {
         if (card !== clickedCard) card.classList.remove('flipped');
       });
+      /* Toggle flipped state on clicked card */
       if (clickedCard) clickedCard.classList.toggle('flipped');
     });
 
-    // DARK MODE
+    /* DARK MODE TOGGLE FUNCTIONALITY: Switch between light and dark themes */
     const darkToggle = document.getElementById('darkToggle');
     const applyTheme = (theme) => {
       const isDark = theme === 'dark';
       document.body.classList.toggle('dark', isDark);
-      darkToggle.textContent = isDark ? '☀️' : '🌙';
+      darkToggle.textContent = isDark ? '☀️' : '🌙'; /* Change emoji based on mode */
       localStorage.setItem('theme', theme);
     };
     const savedTheme = localStorage.getItem('theme') === 'dark' ? 'dark' : 'light';
-    applyTheme(savedTheme);
+    applyTheme(savedTheme); /* Apply saved theme on page load */
     darkToggle.addEventListener('click', () => {
       const nextTheme = document.body.classList.contains('dark') ? 'light' : 'dark';
       applyTheme(nextTheme);
