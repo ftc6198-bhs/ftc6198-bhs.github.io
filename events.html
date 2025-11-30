@@ -138,6 +138,23 @@
     .right-col > .card:first-child { margin-top: 0; }
 
     footer { margin-top:22px; text-align:center; color:var(--muted); font-size:13px; padding:18px 0; }
+
+    /* Special Logic For Photo Gallery: */
+    #rotatingGallery {
+      width: 100%;
+      height: 250px;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+  #rotatingGallery img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 6px;
+  }
   </style>
 </head>
   <body>
@@ -234,23 +251,11 @@
               <span class="tag">Highlights</span>
             </div>
             <!-- Gallery placeholder: Replace with actual event photos -->
-            <div class="gallery" role="list">
+              <div class="gallery" id="rotatingGallery">
+                <img id="galleryImage" src="" alt="Photos From League Meet 1" />
+                <!-- <p class="muted-block">No images yet</p> -->
+              </div>
               <!-- <img src="IMG>PNG" alt="ALT TEXT" /> -->
-               <img src="IMAGES/LeagueMeet1-Picture1.jpg" alt="League Meet 1 Picture 1"></img>
-               <img src="IMAGES/LeagueMeet1-Picture2.jpg" alt="League Meet 1 Picture 2"></img>
-               <img src="IMAGES/LeagueMeet1-Picture3.jpg" alt="League Meet 1 Picture 3"></img>
-               <img src="IMAGES/LeagueMeet1-Picture4.jpg" alt="League Meet 1 Picture 4"></img>
-               <img src="IMAGES/LeagueMeet1-Picture5.jpg" alt="League Meet 1 Picture 5"></img>
-               <img src="IMAGES/LeagueMeet1-Picture6.jpg" alt="League Meet 1 Picture 6"></img>
-               <img src="IMAGES/LeagueMeet1-Picture7.jpg" alt="League Meet 1 Picture 7"></img>
-               <img src="IMAGES/LeagueMeet1-Picture8.jpg" alt="League Meet 1 Picture 8"></img>
-               <img src="IMAGES/LeagueMeet1-Picture9.jpg" alt="League Meet 1 Picture 9"></img>
-               <img src="IMAGES/LeagueMeet1-Picture10.jpg" alt="League Meet 1 Picture 10"></img>
-               <img src="IMAGES/LeagueMeet1-Picture11.jpg" alt="League Meet 1 Picture 11"></img>
-               <img src="IMAGES/LeagueMeet1-Picture12.jpg" alt="League Meet 1 Picture 12"></img>
-               <img src="IMAGES/LeagueMeet1-Picture13.jpg" alt="League Meet 1 Picture 13"></img>
-              <!-- <p class="muted-block">No images yet</p> -->
-            </div>
             <p class="muted-block">Submit event photos to <a href="mailto:bhs.ftc6198+photo-submission@proton.me">Email</a> for inclusion.</p>
         </article>
       </section>
@@ -325,6 +330,46 @@
       const nextTheme = document.body.classList.contains('dark') ? 'light' : 'dark';
       applyTheme(nextTheme);
     });
+  </script>
+  <script>
+    // Your image list — easy to expand
+    const galleryImages = [
+      "IMAGES/LeagueMeet1-Picture1.jpg",
+      "IMAGES/LeagueMeet1-Picture2.jpg",
+      "IMAGES/LeagueMeet1-Picture3.jpg",
+      "IMAGES/LeagueMeet1-Picture4.jpg",
+      "IMAGES/LeagueMeet1-Picture5.jpg",
+      "IMAGES/LeagueMeet1-Picture6.jpg",
+      "IMAGES/LeagueMeet1-Picture7.jpg",
+      "IMAGES/LeagueMeet1-Picture8.jpg",
+      "IMAGES/LeagueMeet1-Picture9.jpg",
+      "IMAGES/LeagueMeet1-Picture10.jpg",
+      "IMAGES/LeagueMeet1-Picture11.jpg",
+      "IMAGES/LeagueMeet1-Picture12.jpg",
+      "IMAGES/LeagueMeet1-Picture13.jpg"
+    ];
+
+    let currentIndex = 0;
+    const imageElement = document.getElementById("galleryImage");
+
+    function loadImage(index) {
+      const img = new Image();
+        img.src = galleryImages[index];
+        img.onload = () => {
+        imageElement.src = img.src;
+      };
+    }
+
+    function nextImage() {
+      currentIndex = (currentIndex + 1) % galleryImages.length;
+      loadImage(currentIndex);
+    }
+
+    // Start gallery
+    loadImage(currentIndex);
+
+    // Change image every 4 seconds
+    setInterval(nextImage, 4000);
   </script>
 </body>
 </html>
