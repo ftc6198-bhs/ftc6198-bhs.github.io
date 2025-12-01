@@ -2,6 +2,8 @@
 
 Welcome to the official website for **FIRST Tech Challenge (FTC) Team 6198**, also known as **BHS Robotics**! We are a dedicated group of students from Barringtonn passionate about STEM, robotics, and innovation.
 
+Check out our [website!](ftc6198-bhs.github.io)
+
 ---
 
 ## About Us
@@ -31,7 +33,7 @@ Interested in joining Team 6198 or supporting our efforts?
 - **Volunteers & Mentors:** Share your expertise and help guide our team.  
 - **Sponsors:** Help fund our robotics program and enable innovation.  
 
-Contact us at: [bhs.ftc6198@proton.me]  
+Contact us at: [bhs.ftc6198@proton.me](mailto:bhs.ftc6198@proton.me)  
 
 ---
 
