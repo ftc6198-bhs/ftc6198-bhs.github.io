@@ -17,7 +17,7 @@ a{color:inherit}
 img{max-width:100%;display:block}
 .container{width:min(var(--max),calc(100% - 32px));margin:auto}
 .skip{position:absolute;left:-9999px}.skip:focus{left:16px;top:16px;z-index:99;background:var(--surface);padding:10px 14px;border-radius:10px}
-.site-header{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(18px);border-bottom:1px solid var(--line)}
+.site-header{position:sticky;top:0;z-index:50;background:var(--bg);background:color-mix(in srgb,var(--bg) 88%,transparent);-webkit-backdrop-filter:blur(18px);backdrop-filter:blur(18px);border-bottom:1px solid var(--line)}
 .navbar{min-height:76px;display:flex;align-items:center;gap:20px}
 .brand{display:flex;align-items:center;gap:11px;text-decoration:none;font-weight:850;letter-spacing:-.02em}
 .brand img{width:48px;height:40px;object-fit:contain}
@@ -48,7 +48,7 @@ img{max-width:100%;display:block}
 .card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:22px;box-shadow:var(--shadow)}
 .card h3,.card h2{margin-top:0;letter-spacing:-.025em}.muted{color:var(--muted)}.small{font-size:12px}
 .kicker{font-size:11px;font-weight:850;letter-spacing:.1em;text-transform:uppercase;color:var(--accent)}
-.callout{background:linear-gradient(135deg,var(--accent-soft),var(--surface));border:1px solid color-mix(in srgb,var(--accent) 22%,var(--line))}
+.callout{background:linear-gradient(135deg,var(--accent-soft),var(--surface));border:1px solid var(--line)}
 .sponsor-cta{padding:30px;display:grid;grid-template-columns:1fr auto;align-items:center;gap:20px;background:linear-gradient(110deg,#5b0b12,#1b0c0e);color:white;border-radius:24px}
 .sponsor-cta p{color:#e8cfd1;margin:6px 0 0}.sponsor-cta .btn{background:white;color:#1a0a0b;border-color:white}
 .list-clean{list-style:none;padding:0;margin:0;display:grid;gap:10px}.list-clean li{display:flex;gap:10px;align-items:flex-start}.list-clean li:before{content:"✓";color:var(--accent);font-weight:900}
@@ -78,6 +78,14 @@ img{max-width:100%;display:block}
 /* Image performance & resilience */
 .brand-logo{object-fit:contain;object-position:center;flex:none}
 .gallery picture{display:block;width:100%;height:100%}
+.section-tight{padding-top:12px}
+.section-compact{padding-top:10px}
+.post-list{display:grid;gap:14px}
+.sponsor-kicker{color:#ff897f}
+.sponsor-cta h2{margin:6px 0}
+.rule{border:0;border-top:1px solid var(--line);margin:24px 0}
+.callout-spaced{margin-top:18px}
+.photo-description{margin:5px 0 0}
 .gallery img,.member-img{background:var(--surface-2);object-position:center;}
 .gallery img{content-visibility:auto;}
 img{height:auto}

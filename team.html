@@ -3,7 +3,7 @@
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Meet the Team · FTC 6198 Lobster Machine</title>
 <meta name="description" content="Meet the student members of FTC Team 6198 Lobster Machine.">
-<meta name="theme-color" content="#e21b2d">
+
 <link rel="stylesheet" href="assets/css/site.css">
 </head><body data-page="team">
 <a class="skip" href="#main">Skip to content</a>
@@ -12,7 +12,7 @@
 <nav class="nav-links" id="navLinks" aria-label="Primary"><a data-page="home" href="index.html">Home</a><a data-page="team" href="team.html">Team</a><a data-page="status" href="status.html">Progress</a><a data-page="events" href="events.html">Events</a><a data-page="sponsors" href="sponsors.html">Sponsors</a><a data-page="mentors" href="mentors.html">Mentors</a></nav>
 <button class="icon-btn menu-btn" id="menuToggle" aria-label="Open menu">☰</button><button class="icon-btn" id="themeToggle" aria-label="Switch theme">☾</button>
 </div></header><main id="main"><section class="page-hero"><div class="container"><div class="eyebrow">People behind the robot</div><h1>Meet Lobster Machine.</h1><p>Our students bring different strengths to one shared engineering problem. Open the cards below for each member’s role and focus.</p></div></section>
-<section class="section" style="padding-top:10px"><div class="container"><div id="teamGrid" class="team-grid"></div><div class="card callout" style="margin-top:18px"><strong>Member photos</strong><p class="muted" style="margin:5px 0 0">The current source archive does not include individual headshots. The cards therefore use clearly labeled portrait placeholders rather than misidentifying competition photos. Replace each placeholder with the member’s approved photo in <code>assets/members/</code> and update the filename in <code>assets/js/data.js</code>.</p><p class="photo-upload-note">Recommended: one consistent, school-appropriate headshot per member, cropped 4:3.</p></div></div></section></main>
+<section class="section section-compact"><div class="container"><div id="teamGrid" class="team-grid"></div><div class="card callout callout-spaced"><strong>Member photos</strong><p class="muted photo-description">The current source archive does not include individual headshots. The cards therefore use clearly labeled portrait placeholders rather than misidentifying competition photos. Replace each placeholder with the member’s approved photo in <code>assets/members/</code> and update the filename in <code>assets/js/data.js</code>.</p><p class="photo-upload-note">Recommended: one consistent, school-appropriate headshot per member, cropped 4:3.</p></div></div></section></main>
 <script src="assets/js/data.js"></script><script>
 const grid=document.getElementById("teamGrid");
 grid.innerHTML=TEAM.map((m,i)=>`<article class="card member-card"><div class="member-photo">${m.photo ? `<img class="member-img" src="${m.photo}" alt="${m.name}" width="800" height="600" loading="lazy" decoding="async">` : `<div class="avatar-placeholder">${m.initials}</div><div class="photo-note">ADD APPROVED PHOTO · ${m.initials}</div>`}</div><div class="member-body"><div class="role">${m.role}</div><h3>${m.name}</h3><div class="chips"><span class="chip">${m.focus}</span></div><p class="bio">${m.bio}</p></div></article>`).join("");

@@ -1,16 +1,17 @@
 
 const TEAM=[
- {name:"Muhammed Irtaza Haider",role:"Team Leader",focus:"Build, Programming & Management",bio:"Leads the team’s technical direction and helps coordinate robot development, programming, and competition preparation.",initials:"MH",photo:null},
- {name:"Varun Nair",role:"Vice Team Leader & Driver",focus:"Drive & Build",bio:"Supports team leadership while contributing to robot construction and competition driving.",initials:"VN",photo:null},
- {name:"Aiden Hawthorn",role:"Lead Documentation & Outreach",focus:"Outreach & Communication",bio:"Coordinates documentation and outreach efforts, helping the team communicate its work and connect with the community.",initials:"AH",photo:null},
- {name:"Anant Parikh",role:"Lead Finance & Sponsorships",focus:"Finance & Public Relations",bio:"Oversees budgeting, sponsorship outreach, fundraising, and external communications that help keep the program sustainable.",initials:"AP",photo:null},
- {name:"Nataya Horn",role:"Lead CAD",focus:"CAD & Design",bio:"Develops detailed CAD concepts that turn robot ideas into manufacturable and competition-ready designs.",initials:"NH",photo:null},
- {name:"Devraj Patel",role:"Builder",focus:"Robot Build",bio:"Contributes to mechanical construction and iteration, helping turn designs into a reliable competition robot.",initials:"DP",photo:null},
- {name:"Anaiza Zaki",role:"Lead Graphic & Brand Designer",focus:"Design & Branding",bio:"Shapes the team’s visual identity and presentation across outreach, social media, and public-facing materials.",initials:"AZ",photo:null}
+ {name: "Muhammad Irtaza Haider", role: "Team Leader", focus: "Build & Code", bio: "Returning Member and Board Member of the Barrington High School Robotics (FTC) Program.", initials: "MIH", photo: null},
+ {name: "Anant Parikh", role: "Head of Finance, Code Assistant", focus: "Finance & Code", bio: "Anant is the Head of Finance and a Code Assistant, providing financial guidance and technical support to the team.", initials: "AP", photo: null},
+ {name: "Aiden Hawthorn", role: "Head of Outreach", focus: "Outreach", bio: "Returning Member with experience in outreach and community engagement.", initials: "AH", photo: null},
+ {name: "Anaiza Zaki", role: "Outreach Assistant", focus: "Outreach", bio: "Returning Member with experience in outreach and pit engagement.", initials: "AZ", photo: null},
+ {name: "Aoun Jawa", role: "Head of Code", focus: "Code", bio: "Rookie Member with experience in coding and software development.", initials: "AJ", photo: null},
+ {name: "Ekaager Brar", role: "Design Lead", focus: "CAD", bio: "Rookie Member with a passion for design and a strong foundation in CAD software from PLTW (Project Lead The Way).", initials: "EB", photo: null},
+ {name: "Kevin Jeyananth", role: "Build Team", focus: "Build & Design", bio: "Rookie Member involved with PLTW (Project Lead The Way) intending on using those skills on the field and in the pit.", initials: "KJ", photo: null},
+ {name: "Rayyan Bhatty", role: "Build Team", focus: "Build", bio: "Rookie Member aiming to become a skilled builder.", initials: "RB", photo: null},
+ {name: "Ryan Scott", role: "Head of Build", focus: "Build", bio: "Rookie Member with experience in building from FRC (First Robotics Competition).", initials: "RS", photo: null},
+ {name: "Jeremiah Rosanwo", role: "Build Team", focus: "Build", bio: "Rookie Member aiming on becoming a skilled builder.", initials: "JR", photo: null}
 ];
 const MENTORS=[
- {name:"AJ Priola",focus:"Programming & FIRST",bio:"Provides programming guidance and helps students navigate the FIRST competition environment.",initials:"AJ",photo:null},
- {name:"Mr. Priola",focus:"Engineering, Management & FIRST",bio:"Supports engineering decisions, project management, and competition preparation.",initials:"MP",photo:null},
- {name:"Aidan Anderson",focus:"Student Mentor",bio:"Provides peer guidance and practical competition experience to the team.",initials:"AA",photo:null},
- {name:"Justin Nguyen",focus:"Building & FIRST",bio:"Offers build advice and helps the team iterate on mechanical solutions.",initials:"JN",photo:null}
+ {name: "Mr. Priola", focus: "Engineering, Management & FIRST", bio: "Supports engineering decisions, project management, and competition preparation.", initials:"MP", photo:null},
+ {name: "Cole Witek", focus: "Mechanical, Electrical, & Design", bio: "Board Member of the Barrington High School Robotics (FTC) Program, providing mentorship in mechanical and electrical design.", initials: "CW", photo: null}
 ];
