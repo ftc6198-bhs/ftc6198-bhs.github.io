@@ -1,40 +1,49 @@
-const $=(s,p=document)=>p.querySelector(s), $$=(s,p=document)=>[...p.querySelectorAll(s)];
-const root=document.documentElement;
-const saved=localStorage.getItem("theme");
-if(saved==="dark" || (!saved && matchMedia("(prefers-color-scheme: dark)").matches)) root.classList.add("dark");
+(() => {
+  const root = document.documentElement;
+  const menu = document.querySelector('[data-menu-button]');
+  const nav = document.querySelector('[data-nav]');
+  const theme = document.querySelector('[data-theme-button]');
 
-function updateThemeButton(){
-  const b=$("#themeToggle");
-  if(!b) return;
-  const dark=root.classList.contains("dark");
-  b.textContent=dark?"☀":"☾";
-  b.setAttribute("aria-label",dark?"Switch to light mode":"Switch to dark mode");
-}
+  const setTheme = (value) => {
+    root.dataset.theme = value;
+    localStorage.setItem('ftc6198-theme', value);
+    if (theme) {
+      theme.setAttribute('aria-label', value === 'dark' ? 'Use light theme' : 'Use dark theme');
+      theme.textContent = value === 'dark' ? '☼' : '◐';
+    }
+  };
 
-function markBrokenImage(img){
-  if(img.dataset.errorHandled) return;
-  img.dataset.errorHandled="true";
-  img.classList.add("image-error");
-  img.alt=`Image unavailable: ${img.alt || "team image"}`;
-}
+  const savedTheme = localStorage.getItem('ftc6198-theme');
+  if (savedTheme === 'dark' || savedTheme === 'light') setTheme(savedTheme);
+  else if (window.matchMedia('(prefers-color-scheme: dark)').matches) setTheme('dark');
+  else setTheme('light');
 
-document.addEventListener("DOMContentLoaded",()=>{
-  updateThemeButton();
-  $("#themeToggle")?.addEventListener("click",()=>{
-    root.classList.toggle("dark");
-    localStorage.setItem("theme",root.classList.contains("dark")?"dark":"light");
-    updateThemeButton();
+  const closeMenu = () => {
+    if (!menu || !nav) return;
+    nav.classList.remove('is-open');
+    menu.setAttribute('aria-expanded', 'false');
+    document.body.classList.remove('menu-open');
+  };
+
+  menu?.addEventListener('click', () => {
+    const open = nav.classList.toggle('is-open');
+    menu.setAttribute('aria-expanded', String(open));
+    document.body.classList.toggle('menu-open', open);
   });
 
-  $("#menuToggle")?.addEventListener("click",()=>{
-    const nav=$("#navLinks");
-    nav?.classList.toggle("open");
-    const open=nav?.classList.contains("open");
-    $("#menuToggle")?.setAttribute("aria-label",open?"Close menu":"Open menu");
+  nav?.querySelectorAll('a').forEach((link) => link.addEventListener('click', closeMenu));
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') closeMenu();
   });
 
-  const page=document.body.dataset.page;
-  $$("#navLinks a").forEach(a=>{if(a.dataset.page===page)a.classList.add("active")});
-  $$(".year").forEach(e=>e.textContent=new Date().getFullYear());
-  $$("img").forEach(img=>img.addEventListener("error",()=>markBrokenImage(img),{once:true}));
-});
+  theme?.addEventListener('click', () => {
+    setTheme(root.dataset.theme === 'dark' ? 'light' : 'dark');
+  });
+
+  const current = document.body.dataset.page;
+  nav?.querySelector(`[data-page="${current}"]`)?.setAttribute('aria-current', 'page');
+
+  document.querySelectorAll('[data-year]').forEach((node) => {
+    node.textContent = String(new Date().getFullYear());
+  });
+})();
